@@ -25,9 +25,11 @@ func main() {
 		container.NewTabItem("UrlEnCode", page.UrlEncodePage(myWindow)),
 		container.NewTabItem("Unicode", page.UnicodePage(myWindow)),
 		container.NewTabItem("公约数", page.GcdPage(myWindow)),
+		container.NewTabItem("Wallpaper", page.Wallpaper(myWindow)),
 	)
 	tabs.SetTabLocation(container.TabLocationLeading)
 
 	myWindow.SetContent(tabs)
 	myWindow.ShowAndRun()
+	//page.RequestImg()
 }

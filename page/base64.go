@@ -13,7 +13,7 @@ func Base64Page(w fyne.Window) fyne.CanvasObject {
 	show := widget.NewMultiLineEntry()
 	show.Wrapping = fyne.TextWrapBreak
 
-	show.SetText(`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEwLCJCdWZmZXJUaW1lIjo4NjQwMCwiaXNzIjoidGhoIiwiZXhwIjoxNjYwNzM0OTMwLCJuYmYiOjE2NjAxMzAxMzB9.tnTQYaaM7FfJhah9veVNS0OSkh1q4hKtP1UUUgESCQY`)
+	show.SetText(`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJVc2VySWQiOjEwLCJCdWZmZXJUaW1lIjo4NjQwMCwiaXNzIjoidGhoIiwiZXhwIjoxNjYwNzM0OTMwLCJuYmYiOjE2NjAxMzAxMzB9`)
 
 	base64DecodeButton := widget.NewButton("decode", func() {
 		data, _ := base64.StdEncoding.DecodeString(show.Text)
