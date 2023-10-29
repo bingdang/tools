@@ -86,6 +86,19 @@ func GetImgData(iu Images, cimg chan *canvas.Image, wg *sync.WaitGroup) {
 	wg.Done()
 }
 
+func introduce() *widget.RichText {
+	text := `
+
+
+## 免责声明
+- 数据来自Bing OpenAPI。
+- 应该是每日稳定更新。
+- 还没学会做保存功能。
+- Power By [MaxBit](https://cakepanit.com)。
+`
+	return widget.NewRichTextFromMarkdown(text)
+}
+
 func Wallpaper(w fyne.Window) fyne.CanvasObject {
 	cimge := make(chan *canvas.Image, 8)
 	imgs, err := RequestImgURL("js", "0", "8", "zh-CN")
@@ -106,7 +119,6 @@ func Wallpaper(w fyne.Window) fyne.CanvasObject {
 		for is := range cimge {
 			*imagelist = append(*imagelist, is)
 		}
-
-		return container.New(layout.NewGridLayout(3), (*imagelist)[0], (*imagelist)[1], (*imagelist)[2], (*imagelist)[3], (*imagelist)[4], (*imagelist)[5], (*imagelist)[6], (*imagelist)[7])
+		return container.New(layout.NewGridLayout(3), (*imagelist)[0], (*imagelist)[1], (*imagelist)[2], (*imagelist)[3], (*imagelist)[4], (*imagelist)[5], (*imagelist)[6], (*imagelist)[7], introduce())
 	}
 }
