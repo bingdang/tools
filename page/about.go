@@ -10,9 +10,9 @@ func About(w fyne.Window) fyne.CanvasObject {
 	text := `
 # About
 ## 这是什么？
-这是一个小工具合集，作者为[MaxBit](https://cakepanit.com)站长。
+这是一个小工具合集，作者饼铛(cheng)。
 
-Power By 饼铛(cheng)
+Power By [MaxBit](https://cakepanit.com)
 `
 	about := widget.NewRichTextFromMarkdown(text)
 	about.Wrapping = fyne.TextWrapWord

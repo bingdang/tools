@@ -3,15 +3,16 @@ package page
 import (
 	"encoding/json"
 	"fyne.io/fyne/v2"
+	"io"
+	"log"
+	"net/http"
+	"sync"
+
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/storage"
 	"fyne.io/fyne/v2/widget"
-	"io"
-	"log"
-	"net/http"
-	"sync"
 )
 
 // 请求参数
@@ -119,6 +120,7 @@ func Wallpaper(w fyne.Window) fyne.CanvasObject {
 		for is := range cimge {
 			*imagelist = append(*imagelist, is)
 		}
+
 		return container.New(layout.NewGridLayout(3), (*imagelist)[0], (*imagelist)[1], (*imagelist)[2], (*imagelist)[3], (*imagelist)[4], (*imagelist)[5], (*imagelist)[6], (*imagelist)[7], introduce())
 	}
 }
